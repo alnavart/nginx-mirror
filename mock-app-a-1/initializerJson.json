@@ -1,18 +1,85 @@
 [
   {
     "httpRequest": {
-      "path": "/simpleFirst"
+      "method": "GET",
+      "path": "/api-a/valid"
     },
     "httpResponse": {
-      "body": "some first response"
+      "statusCode": 200,
+      "body": "app-a-1 valid response"
     }
   },
   {
     "httpRequest": {
-      "path": "/simpleSecond"
+      "method": "GET",
+      "path": "/api-a/error-only-in-mirror"
     },
     "httpResponse": {
-      "body": "some second response"
+      "statusCode": 200,
+      "body": "app-a-1 valid response, and invalid in app-a-2"
+    }
+  },
+  {
+    "httpRequest": {
+      "method": "GET",
+      "path": "/api-a/error-only-in-proxy"
+    },
+    "httpResponse": {
+      "statusCode": 500,
+      "body": "app-a-1 invalid response, and valid in app-a-2"
+    }
+  },
+  {
+    "httpRequest": {
+      "method": "GET",
+      "path": "/api-a/error"
+    },
+    "httpResponse": {
+      "statusCode": 500,
+      "body": "app-a-1 error response"
+    }
+  },
+
+
+  {
+    "httpRequest": {
+      "method": "POST",
+      "path": "/api-a/valid"
+    },
+    "httpResponse": {
+      "statusCode": 201,
+      "body": "app-a-1 valid post response"
+    }
+  },
+  {
+    "httpRequest": {
+      "method": "POST",
+      "path": "/api-a/error-only-in-mirror"
+    },
+    "httpResponse": {
+      "statusCode": 201,
+      "body": "app-a-1 valid post response, and invalid in app-a-2"
+    }
+  },
+  {
+    "httpRequest": {
+      "method": "POST",
+      "path": "/api-a/error-only-in-proxy"
+    },
+    "httpResponse": {
+      "statusCode": 500,
+      "body": "app-a-1 invalid post response, and valid in app-a-2"
+    }
+  },
+  {
+    "httpRequest": {
+      "method": "POST",
+      "path": "/api-a/error"
+    },
+    "httpResponse": {
+      "statusCode": 500,
+      "body": "app-a-1 error post response"
     }
   }
+
 ]
